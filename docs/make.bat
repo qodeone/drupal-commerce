@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXPROJ=DrupalCommerceDocumentation
+set SPHINXPROJ=DrupalCommerce
 
 if "%1" == "" goto help
 

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing &#8212; Drupal Commerce 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Composer: the what, why, and how" href="composer.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installing">
+<h1>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><strong>Installing Commerce to contribute back?</strong> Check out our
+<a class="reference external" href="contributing/getting-started.html">installation instructions for contributors</a>.</div></blockquote>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Commerce 2.x requires Drupal 8.2.0 or newer.</p>
+<div class="line-block">
+<div class="line">If you already have a web server, make sure it satisfies <a class="reference external" href="https://www.drupal.org/requirements">Drupal 8’s
+requirements</a>.</div>
+<div class="line">The recommended memory limit is 256MB or more.</div>
+</div>
+<div class="line-block">
+<div class="line">For local development we recommend <a class="reference external" href="http://www.drupalvm.com/">Drupal VM</a> (advanced users) or
+<a class="reference external" href="https://www.acquia.com/products-services/dev-desktop">Acquia Dev Desktop</a> (beginners).</div>
+<div class="line">You will also need <a class="reference external" href="https://getcomposer.org/doc/00-intro.rst#installation-linux-unix-osx">Composer</a>.</div>
+</div>
+<p><a class="reference external" href="https://bojanz.wordpress.com/2015/09/18/d8-composer-definitive-intro/">Why must we use Composer?</a></p>
+</div>
+<div class="section" id="new-site">
+<h2>New site<a class="headerlink" href="#new-site" title="Permalink to this headline">¶</a></h2>
+<p>The following command will download Drupal 8 + Commerce 2.x with all
+dependencies to the <code class="docutils literal"><span class="pre">mystore</span></code> folder:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">composer</span> <span class="n">create</span><span class="o">-</span><span class="n">project</span> <span class="n">drupalcommerce</span><span class="o">/</span><span class="n">project</span><span class="o">-</span><span class="n">base</span> <span class="n">mystore</span> <span class="o">--</span><span class="n">stability</span> <span class="n">dev</span>
+</pre></div>
+</div>
+<p>Install it just like a regular Drupal site. Commerce will be
+automatically enabled for you.</p>
+<p>Tips:</p>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">bin</span></code> folder contains <a class="reference external" href="https://drupalconsole.com">Drupal Console</a>.</li>
+<li>The <code class="docutils literal"><span class="pre">web</span></code> folder represents the document root.</li>
+<li>Composer commands are always run from the site root (<code class="docutils literal"><span class="pre">mystore</span></code> in
+this case).</li>
+<li>Downloading additional modules:
+<code class="docutils literal"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">&quot;drupal/devel:1.x-dev&quot;</span></code></li>
+<li>Updating an existing module: <code class="docutils literal"><span class="pre">composer</span> <span class="pre">update</span> <span class="pre">drupal/address</span></code>
+–with-dependencies</li>
+</ul>
+<p>See the <a class="reference external" href="https://github.com/drupalcommerce/project-base/blob/8.x/README.rst">project-base README</a> for more details.</p>
+</div>
+<div class="section" id="existing-site">
+<h2>Existing site<a class="headerlink" href="#existing-site" title="Permalink to this headline">¶</a></h2>
+<p>Run these commands in the root of your website:</p>
+<ol class="arabic simple">
+<li>Add the Drupal Packagist repository</li>
+</ol>
+<p><code class="docutils literal"><span class="pre">sh</span>&#160; <span class="pre">composer</span> <span class="pre">config</span> <span class="pre">repositories.drupal</span> <span class="pre">composer</span> <span class="pre">https://packages.drupal.org/8</span></code></p>
+<p>This allows Composer to find Commerce and the other Drupal modules.</p>
+<ol class="arabic simple">
+<li>Download Commerce</li>
+</ol>
+<p><code class="docutils literal"><span class="pre">sh</span>&#160; <span class="pre">composer</span> <span class="pre">require</span> <span class="pre">&quot;drupal/commerce</span> <span class="pre">2.x-dev&quot;</span></code></p>
+<p>This will also download the required libraries and modules (Address,
+Entity, State Machine, Inline Entity Form, Profile).</p>
+<ol class="arabic simple">
+<li>Enable Commerce (instructions below use <a class="reference external" href="https://drupalconsole.com">Drupal Console</a>)</li>
+</ol>
+<p><code class="docutils literal"><span class="pre">sh</span>&#160; <span class="pre">drupal</span> <span class="pre">module:install</span> <span class="pre">commerce_product</span> <span class="pre">commerce_checkout</span> <span class="pre">commerce_cart</span> <span class="pre">commerce_tax</span></code></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installing</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#new-site">New site</a></li>
+<li><a class="reference internal" href="#existing-site">Existing site</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="composer.html" title="previous chapter">Composer: the what, why, and how</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/v2/getting-started/install.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Isaac Horton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/v2/getting-started/install.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

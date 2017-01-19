@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Drupal Commerce Documentation documentation build configuration file, created by
-# sphinx-quickstart on Wed Jan 18 14:43:17 2017.
+# Drupal Commerce documentation build configuration file, created by
+# sphinx-quickstart on Wed Jan 18 19:26:21 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -30,7 +30,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc']
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -38,14 +38,14 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
+# source_suffix = ['.rst', '.rst']
 source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
 
 # General information about the project.
-project = u'Drupal Commerce Documentation'
+project = u'Drupal Commerce'
 copyright = u'2017, Isaac Horton'
 author = u'Isaac Horton'
 
@@ -99,7 +99,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'DrupalCommerceDocumentationdoc'
+htmlhelp_basename = 'DrupalCommercedoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -126,7 +126,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'DrupalCommerceDocumentation.tex', u'Drupal Commerce Documentation Documentation',
+    (master_doc, 'DrupalCommerce.tex', u'Drupal Commerce Documentation',
      u'Isaac Horton', 'manual'),
 ]
 
@@ -136,7 +136,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'drupalcommercedocumentation', u'Drupal Commerce Documentation Documentation',
+    (master_doc, 'drupalcommerce', u'Drupal Commerce Documentation',
      [author], 1)
 ]
 
@@ -147,8 +147,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'DrupalCommerceDocumentation', u'Drupal Commerce Documentation Documentation',
-     author, 'DrupalCommerceDocumentation', 'One line description of project.',
+    (master_doc, 'DrupalCommerce', u'Drupal Commerce Documentation',
+     author, 'DrupalCommerce', 'One line description of project.',
      'Miscellaneous'),
 ]
 
