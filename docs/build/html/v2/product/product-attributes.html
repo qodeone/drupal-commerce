@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup product attributes &mdash; Drupal Commerce 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Drupal Commerce 0.0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Products" href="index.html"/>
+        <link rel="next" title="Make a product" href="products.html"/>
+        <link rel="prev" title="Products" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Drupal Commerce
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../v1/README.html">Commerce 1.x Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Commerce 2.x</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../README.html">Commerce 2.x Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#libraries-and-dependencies">Libraries and dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#setting-up-stores">Setting up stores</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#managing-products">Managing products</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Products</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Setup product attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="products.html">Make a product</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-type.html">Create a product type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purchasable-entities.html">Purchasable Entities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#catalog-and-product-pages">Catalog and product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#product-merchandising">Product merchandising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#working-with-orders">Working with orders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#configuring-checkout">Configuring Checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#payments">Payments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#code-recipes">Code Recipes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Drupal Commerce</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Commerce 2.x</a> &raquo;</li>
+      
+          <li><a href="index.html">Products</a> &raquo;</li>
+      
+    <li>Setup product attributes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/v2/product/product-attributes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-product-attributes">
+<h1>Setup product attributes<a class="headerlink" href="#setup-product-attributes" title="Permalink to this headline">¶</a></h1>
+<div class="figure" id="id1">
+<img alt="Product Attribute Entity Relationships" src="../../_images/tshirt_drupalcon.png" />
+<p class="caption"><span class="caption-text">Product Attribute Entity Relationships</span></p>
+</div>
+<p>Imagine you need to sell a DrupalCon t-shirt. This t-shirt comes in
+different sizes and colors. Each combination of size and color has its
+own SKU, so you know which color and size the customer has purchased and
+you can track exactly how many of each combination you have in stock.</p>
+<div class="figure" id="id2">
+<img alt="Product Attribute Entity Relationships" src="../../_images/attribute_entity_relationships.png" />
+<p class="caption"><span class="caption-text">Product Attribute Entity Relationships</span></p>
+</div>
+<p>Color and size are product attributes. Blue and small are product
+attribute values, belonging to the mentioned attributes. The combination
+of attribute values (with a SKU and a price) is called a product
+variation. These variations are grouped inside a product.</p>
+<div class="section" id="creating-attributes-and-their-values">
+<h2>Creating Attributes and their Values<a class="headerlink" href="#creating-attributes-and-their-values" title="Permalink to this headline">¶</a></h2>
+<p>For our t-shirt we need two attributes: color and size. Let&#8217;s start by
+creating the color attribute. Go to
+<code class="docutils literal"><span class="pre">admin/commerce/product-attributes</span></code> and click the Add attribute link.</p>
+<div class="figure" id="id3">
+<img alt="Product Attribute Creation" src="../../_images/attribute_create_02.png" />
+<p class="caption"><span class="caption-text">Product Attribute Creation</span></p>
+</div>
+<p>After you have created the color attribute, we need to define at least
+one value. Normally we would simply say the color is &#8220;blue&#8221; or &#8220;red&#8221; but
+sometimes you might need to further define the attribute using fields.
+Adding fields is covered in detail later on in the documentation.</p>
+<p>The product attribute values user interface allows creating and
+re-ordering multiple values at the same time and a very powerful
+translation capability:</p>
+<div class="figure" id="id4">
+<img alt="Product Attribute Value Creation" src="../../_images/attribute_create_03.png" />
+<p class="caption"><span class="caption-text">Product Attribute Value Creation</span></p>
+</div>
+<p>Next, you will need to add the attribute to the product variation type.
+You can find these at <code class="docutils literal"><span class="pre">/admin/commerce/config/product-variation-types</span></code>
+and you just need to add/edit a product variation type that requires
+your new attribute.</p>
+<div class="figure" id="id5">
+<img alt="Adding Product Attribute to Product Variation" src="../../_images/attribute_create_04.png" />
+<p class="caption"><span class="caption-text">Adding Product Attribute to Product Variation</span></p>
+</div>
+<p>After you have added &#8220;Color&#8221; and the various colors your t-shirts are
+available in, the next step is to add that &#8220;color&#8221; attribute to our
+product. Store administrators can do this on the product variation type
+form, the checkbox in the last step automatically created entity
+referenced fields as needed:</p>
+<div class="figure" id="id6">
+<img alt="Example Product variation form" src="../../_images/attribute_create_05.png" />
+<p class="caption"><span class="caption-text">Example Product variation form</span></p>
+</div>
+</div>
+<div class="section" id="adding-fields-to-attributes">
+<h2>Adding fields to Attributes<a class="headerlink" href="#adding-fields-to-attributes" title="Permalink to this headline">¶</a></h2>
+<p>Product attributes are so much more than a word. Often times they
+represent a differentiation between products that is useful to call out
+visually for customers. The fieldable attribute value lets the
+information architect decide what best describes this attribute. Like
+any other fieldable entity, you can locate the list of attribute bundles
+and click edit fields:</p>
+<p><code class="docutils literal"><span class="pre">/admin/commerce/product-attributes</span></code></p>
+<div class="figure" id="id7">
+<img alt="Locating list of attributes" src="../../_images/attribute_create_01.png" />
+<p class="caption"><span class="caption-text">Locating list of attributes</span></p>
+</div>
+<p>Add a field as you would expect. Most fields are supported and will
+automatically show up when you go to add attribute values:</p>
+<div class="figure" id="id8">
+<img alt="Example of attribute with more than one attribute" src="../../_images/attribute_create_03.png" />
+<p class="caption"><span class="caption-text">Example of attribute with more than one attribute</span></p>
+</div>
+</div>
+<div class="section" id="editing-attributes">
+<h2>Editing Attributes<a class="headerlink" href="#editing-attributes" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id9">
+<img alt="How do you edit the attribute values?" src="../../_images/attribute_edit_01.png" />
+<p class="caption"><span class="caption-text">How do you edit the attribute values?</span></p>
+</div>
+<p>Editing the attribute values is pretty easy. Simply locate the attribute
+type that has the values you want to edit:
+<code class="docutils literal"><span class="pre">/admin/commerce/product-attributes</span></code> And click &#8220;edit&#8221; and you will be
+taken to a screen to edit all the attributes of that type.</p>
+</div>
+<div class="section" id="optional-attributes">
+<h2>Optional Attributes<a class="headerlink" href="#optional-attributes" title="Permalink to this headline">¶</a></h2>
+<p>After creating attributes, the product variation type needs to know that
+it uses the attribute. The product variations are at
+<code class="docutils literal"><span class="pre">/admin/commerce/config/product-variation-types</span></code> and once you&#8217;ve
+clicked on the attribute you want...</p>
+<div class="figure" id="id10">
+<img alt="Adding Product Attribute to Product Variation" src="../../_images/attribute_create_04.png" />
+<p class="caption"><span class="caption-text">Adding Product Attribute to Product Variation</span></p>
+</div>
+<p>Fields are added to the variation type that can then be modified. By
+default, all attribute fields are required. If your attribute is
+optional (perhaps some of the drupalcon t-shirts only come in blue),
+then you can locate the manage fields of your particular product
+variation type and make the <code class="docutils literal"><span class="pre">color</span></code> attribute optional by following
+these steps:</p>
+<ol class="arabic simple">
+<li>Go to <code class="docutils literal"><span class="pre">/admin/commerce/config/product-variation-types</span></code></li>
+<li>Click the drop down next to the variation type you want and click
+&#8220;manage fields&#8221; <img alt="Click manage fields" src="../../_images/product_variation_manage_fields.gif" /></li>
+<li>Un-select the &#8220;required&#8221; checkbox to make the attribute optional.</li>
+</ol>
+<div class="figure" id="id11">
+<img alt="Un-select the required checkbox" src="../../_images/attribute_optional.png" />
+<p class="caption"><span class="caption-text">Un-select the required checkbox</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="products.html" class="btn btn-neutral float-right" title="Make a product" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Products" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Commerce Guys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

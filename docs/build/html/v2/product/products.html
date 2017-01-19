@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Make a product &mdash; Drupal Commerce 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Drupal Commerce 0.0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Products" href="index.html"/>
+        <link rel="next" title="Create a product type" href="product-type.html"/>
+        <link rel="prev" title="Setup product attributes" href="product-attributes.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Drupal Commerce
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../v1/README.html">Commerce 1.x Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Commerce 2.x</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../README.html">Commerce 2.x Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#libraries-and-dependencies">Libraries and dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#setting-up-stores">Setting up stores</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#managing-products">Managing products</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Products</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="product-attributes.html">Setup product attributes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Make a product</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-type.html">Create a product type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purchasable-entities.html">Purchasable Entities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#catalog-and-product-pages">Catalog and product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#product-merchandising">Product merchandising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#working-with-orders">Working with orders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#configuring-checkout">Configuring Checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#payments">Payments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#code-recipes">Code Recipes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Drupal Commerce</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Commerce 2.x</a> &raquo;</li>
+      
+          <li><a href="index.html">Products</a> &raquo;</li>
+      
+    <li>Make a product</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/v2/product/products.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="make-a-product">
+<h1>Make a product<a class="headerlink" href="#make-a-product" title="Permalink to this headline">¶</a></h1>
+<p>Every product has one or more variations. In the event that a product
+has more than one variation, each variation is differentiated by some
+aspect of the product, whether it’s the product’s color, size, fabric,
+etc.</p>
+<div class="figure" id="id1">
+<img alt="Product Entity Relationships" src="../../_images/product_entity_relationships.png" />
+<p class="caption"><span class="caption-text">Product Entity Relationships</span></p>
+</div>
+<p>For example, you sell t-shirts (Product Type) and you have a new
+shipment of a particular Drupalcon t-shirt (Product). This Drupalcon
+t-shirt comes in different sizes and colors. Each combination of size
+and color (Small Red, Large Blue) represents a physical version of the
+t-shirt (Product Variation).</p>
+<blockquote>
+<div><strong>NOTE</strong>: In order to create your first product, you will need to
+have a store and a currency already set up. If you don&#8217;t have this,
+there&#8217;s a <a class="reference external" href="../getting-started.rst">Getting Started</a> section that
+will walk you through the steps.</div></blockquote>
+<div class="section" id="managing-products-and-their-variations">
+<h2>Managing Products and their Variations<a class="headerlink" href="#managing-products-and-their-variations" title="Permalink to this headline">¶</a></h2>
+<p>By default, variations are only manageable from the parent product,
+using Inline Entity Form. Variations do not have labels or titles.
+Labels, by default, are dynamically constructed from the attribute
+labels. To create or update a product variation, you must go to the
+product screen and either choose an existing product or create a new
+one.</p>
+<p>You can simply go to <code class="docutils literal"><span class="pre">admin/commerce/products</span></code> and click &#8220;Add
+Product.&#8221;</p>
+<div class="figure" id="id2">
+<img alt="Product select" src="../../_images/product-add.png" />
+<p class="caption"><span class="caption-text">Product select</span></p>
+</div>
+<p>Once you have selected an existing product or added a new one, you will
+be presented with a form that looks similar to the following. It will
+have &#8220;product details&#8221; like title, description, and path. And a widget
+for creating an unlimited number of variations that have prices, skus,
+and any available attributes.</p>
+<div class="figure" id="id3">
+<img alt="Product edit screen" src="../../_images/product-add-fullpage.png" />
+<p class="caption"><span class="caption-text">Product edit screen</span></p>
+</div>
+<p>Deleting a product deletes its variations. Adding a variation to a
+product automatically creates a backreference on the variation, accessed
+via $variation-&gt;getProduct().</p>
+</div>
+<div class="section" id="product-fields">
+<h2>Product Fields<a class="headerlink" href="#product-fields" title="Permalink to this headline">¶</a></h2>
+<p>Products can have all kinds of fields. Often Commerce products will have
+a very media-rich set of content that is used to describe and present
+the product. These fields will remain the same and be available no
+matter which product variation is selected on the product page. Perhaps
+all of our t-shirt products have videos that show off Drupalers
+sprinting while wearing each of the t-shirts. We will need a field that
+accepts video urls and can render them for the page.</p>
+<div class="section" id="adding-a-product-field">
+<h3>Adding a Product Field<a class="headerlink" href="#adding-a-product-field" title="Permalink to this headline">¶</a></h3>
+<p>Product types, for example, our tshirt product type, can be found at
+<code class="docutils literal"><span class="pre">admin/commerce/config/product-types</span></code> (under the configuration menu
+option) and clicking on the arrow next to the Edit button will reveal
+all the management tasks for product variation types. Click on the
+<code class="docutils literal"><span class="pre">Manage</span> <span class="pre">Fields</span></code> option.</p>
+<p>Once on the manage fields screen for our product type, you can add as
+many types of fields as you like by clicking the <code class="docutils literal"><span class="pre">+</span> <span class="pre">Add</span> <span class="pre">Field</span></code> button.</p>
+</div>
+</div>
+<div class="section" id="variation-fields">
+<h2>Variation Fields<a class="headerlink" href="#variation-fields" title="Permalink to this headline">¶</a></h2>
+<p>Products variations can have attributes and other kinds of fields. Going
+back to our t-shirt analogy from above, if our t-shirts come in sizes
+and colors, perhaps the product variation should have an image field so
+you can upload a picture of a small red shirt. These kinds of
+non-attribute fields are loaded dynamically when variations are chosen.</p>
+<div class="section" id="adding-a-product-variation-field">
+<h3>Adding a Product Variation Field<a class="headerlink" href="#adding-a-product-variation-field" title="Permalink to this headline">¶</a></h3>
+<p>Product variation types can be found at
+<code class="docutils literal"><span class="pre">admin/commerce/config/product-variation-types</span></code> and clicking on the
+arrow next to the Edit button (1) will reveal all the management tasks
+for product variation types. Click on the <code class="docutils literal"><span class="pre">Manage</span> <span class="pre">Fields</span></code> option (2).</p>
+<div class="figure" id="id4">
+<img alt="Manage Fields" src="../../_images/product_variation_field.png" />
+<p class="caption"><span class="caption-text">Manage Fields</span></p>
+</div>
+<p>Once there, you can add as many types of fields as you like. Note that
+attributes that you have added in the past will show up here as entity
+reference fields. For our example, we will be adding an image field.</p>
+<div class="figure" id="id5">
+<img alt="Add a field" src="../../_images/product_variation_manage_field.png" />
+<p class="caption"><span class="caption-text">Add a field</span></p>
+</div>
+<p>Choose the kind of field you would like to add and setup any of the
+settings as you need.</p>
+<div class="figure" id="id6">
+<img alt="Add an image field" src="../../_images/product_variation_add_product_image.png" />
+<p class="caption"><span class="caption-text">Add an image field</span></p>
+</div>
+<p>Finally, you should have your new field showing up in your product add
+form located at <code class="docutils literal"><span class="pre">product/add</span></code></p>
+<div class="figure" id="id7">
+<img alt="New Field Available" src="../../_images/product_variation_new_field_available.png" />
+<p class="caption"><span class="caption-text">New Field Available</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="managing-the-display-of-the-product">
+<h2>Managing the display of the product<a class="headerlink" href="#managing-the-display-of-the-product" title="Permalink to this headline">¶</a></h2>
+<p>Once the tshirt has important content fields and the t-shirt variation
+fields have differentiating fields figured out, the product page may not
+look as clean the designer envisioned. It&#8217;s likely that there are a
+number of labels for fields (like price, product image, SKU, etc) that
+you would rather not display. There are two different <code class="docutils literal"><span class="pre">Manage</span> <span class="pre">Display</span></code>
+locations you will need to manage in order to get the desired output on
+your product page.</p>
+<blockquote>
+<div><strong>NOTE</strong>: It&#8217;s recommended that if you are using display modes to
+effect the product pages, that you use the &#8220;show weights&#8221; check box.
+The reason for this is that when a product is rendered, all fields,
+from the variation to the actual product get sorted based on weight.
+So if you just use the drag and drop methods, you will not get the
+granular control you might expect.</div></blockquote>
+<p>To fully control the display of all the fields it&#8217;s helpful to think of
+the fields as being a part of one big group.</p>
+<div class="figure" id="id8">
+<img alt="Manage Display field weight graphic" src="../../_images/product_display_visual.png" />
+<p class="caption"><span class="caption-text">Manage Display field weight graphic</span></p>
+</div>
+<p>Above, our T-shirt Product fields (body, variations) are rendered with
+our T-shirt Product Variation fields (Price, Image). In order to achieve
+this order, the field weights must be manually set to go in order, as if
+they were in a large group.</p>
+<p>Product field weight can be managed here:
+<code class="docutils literal"><span class="pre">admin/commerce/config/product-types</span></code></p>
+<p>Product Variation field weight can be managed here:
+<code class="docutils literal"><span class="pre">admin/commerce/config/product-variation-types</span></code></p>
+<blockquote>
+<div><strong>FANCY FEATURE ALERT</strong>: You may have noticed that product variation
+fields can be displayed INDEPENDENTLY of the variations field. Lots
+of work has gone in to making sure these fields get replaced easily
+and consistently when a new product is selected on the add-to-cart
+form. This was developed specifically to allow fine-tuned control of
+how a store would want to present different pieces of information.
+Perhaps you really need the picture of the selected t-shirt to
+appear before the body field of the product. Just change the weight
+:)</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="product-type.html" class="btn btn-neutral float-right" title="Create a product type" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="product-attributes.html" class="btn btn-neutral" title="Setup product attributes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Commerce Guys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

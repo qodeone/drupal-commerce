@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Developing &mdash; Drupal Commerce 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Drupal Commerce 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Getting Started with Drupal Commerce 2" href="../../getting-started.html"/>
+        <link rel="next" title="Libraries and dependencies" href="../../building-blocks/index.html"/>
+        <link rel="prev" title="Getting ready for development" href="development-environment.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Drupal Commerce
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../v1/README.html">Commerce 1.x Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Commerce 2.x</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../README.html">Commerce 2.x Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#getting-started">Getting Started</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../getting-started.html">Getting Started with Drupal Commerce 2</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../composer.html">Composer: the what, why, and how</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../install.html">Installing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../update.html">Keeping a Drupal Commerce site up to date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development-environment.html">Getting ready for development</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Developing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#libraries-and-dependencies">Libraries and dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#setting-up-stores">Setting up stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#managing-products">Managing products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#catalog-and-product-pages">Catalog and product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#product-merchandising">Product merchandising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#working-with-orders">Working with orders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#configuring-checkout">Configuring Checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#payments">Payments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#code-recipes">Code Recipes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Drupal Commerce</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Commerce 2.x</a> &raquo;</li>
+      
+          <li><a href="../../getting-started.html">Getting Started with Drupal Commerce 2</a> &raquo;</li>
+      
+    <li>Developing</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/v2/getting-started/contributing/developing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="developing">
+<h1>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="choosing-an-issue">
+<h2>Choosing an issue<a class="headerlink" href="#choosing-an-issue" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Commerce uses GitHub for code and drupal.org for tracking issues.</div>
+<div class="line">To choose an issue, go through <a class="reference external" href="https://www.drupal.org/project/issues/search/commerce?assigned=&amp;submitted=&amp;project_issue_followers=&amp;status%5B0%5D=Open&amp;version%5B0%5D=8.x&amp;issue_tags_op=%3D&amp;issue_tags=&amp;text=&amp;&amp;&amp;&amp;order=field_issue_priority&amp;sort=desc">the open issues</a>, pick one you like
+and <strong>assign it to you</strong>.</div>
+</div>
+<div class="line-block">
+<div class="line">If you need help choosing an issue or working on one, join the
+Commerce 2.x office hours.</div>
+<div class="line">They are held every wednesday at 3PM GMT+1 on the <em>#drupal-commerce</em>
+<a class="reference external" href="https://www.drupal.org/irc">IRC channel</a>.</div>
+</div>
+<p>**<a class="reference external" href="Tip:**">Tip:**</a> You can also view the issue queue as a <a class="reference external" href="https://contribkanban.com/board/commerce2x">kanban board</a>.</p>
+</div>
+<div class="section" id="creating-a-pull-request">
+<h2>Creating a pull request<a class="headerlink" href="#creating-a-pull-request" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Start by creating a branch for your work.</div>
+<div class="line">The branch name should contain a brief summary of its id and the
+issue, e.g <strong>2276369-fix-product-form-notice</strong>:</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">web</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">contrib</span><span class="o">/</span><span class="n">commerce</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="mi">2276369</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">product</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">notice</span>
+</pre></div>
+</div>
+<p>Once you’re done with development, push your commits to your fork:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Issue 2276369: Fix notice in the product form.&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">fork</span> <span class="mi">2276369</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">product</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">notice</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">You can now go to your fork’s GitHub page and <a class="reference external" href="https://help.github.com/articles/using-pull-requests#initiating-the-pull-request">create a pull
+request</a>.</div>
+<div class="line">Your pull request should link to the drupal.org issue, and vice-versa.</div>
+</div>
+<p>After your code has been reviewed, you might be asked to perform some
+changes and then have them reviewed again:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Change the desired files.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Addressed feedback.&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">fork</span> <span class="mi">2276369</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">product</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">notice</span>
+</pre></div>
+</div>
+<p>Updating the branch will automatically update the related pull request.</p>
+</div>
+<div class="section" id="keeping-up-to-date">
+<h2>Keeping up to date<a class="headerlink" href="#keeping-up-to-date" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Your forked repository and the original one (called <em>origin</em>) will
+eventually get out of sync.</div>
+<div class="line">Periodically update your fork by doing:</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Update your local branch.</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="mf">8.</span><span class="n">x</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span><span class="o">/</span><span class="mf">8.</span><span class="n">x</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span>
+<span class="c1"># Push the update to your GitHub fork.</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">fork</span> <span class="mf">8.</span><span class="n">x</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Your pull request might also need rebasing, to re-apply your changes
+on top of the latest code.</div>
+<div class="line">Once you’ve updated the master branch (8.x-2.x), rebase your branch:</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="mi">2276369</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">product</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">notice</span>
+<span class="n">git</span> <span class="n">rebase</span> <span class="mf">8.</span><span class="n">x</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span> <span class="n">fork</span> <span class="mi">2276369</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">product</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">notice</span>
+</pre></div>
+</div>
+<p>That’s it! Happy contributing!</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../building-blocks/index.html" class="btn btn-neutral float-right" title="Libraries and dependencies" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="development-environment.html" class="btn btn-neutral" title="Getting ready for development" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Commerce Guys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

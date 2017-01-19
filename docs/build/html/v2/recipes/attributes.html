@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Product Attributes and Values &mdash; Drupal Commerce 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Drupal Commerce 0.0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Code Recipes" href="index.html"/>
+        <link rel="next" title="Products and types" href="products.html"/>
+        <link rel="prev" title="Product Variations and types" href="variations.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Drupal Commerce
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../v1/README.html">Commerce 1.x Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Commerce 2.x</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../README.html">Commerce 2.x Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#libraries-and-dependencies">Libraries and dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#setting-up-stores">Setting up stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#managing-products">Managing products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#catalog-and-product-pages">Catalog and product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#product-merchandising">Product merchandising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#working-with-orders">Working with orders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#configuring-checkout">Configuring Checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#payments">Payments</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#code-recipes">Code Recipes</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Code Recipes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="stores.html">Store recipes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variations.html">Product Variations and types</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Product Attributes and Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="products.html">Products and types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="orders.html">Orders and order items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Drupal Commerce</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Commerce 2.x</a> &raquo;</li>
+      
+          <li><a href="index.html">Code Recipes</a> &raquo;</li>
+      
+    <li>Product Attributes and Values</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/v2/recipes/attributes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="product-attributes-and-values">
+<h1>Product Attributes and Values<a class="headerlink" href="#product-attributes-and-values" title="Permalink to this headline">¶</a></h1>
+<p>Product variation types can have certain attributes (ex. color) and
+those attributes have values (ex red, blue). In this example, we will
+create two attributes (color and size) and add them to the variation
+type we made previously.</p>
+<div class="section" id="creating-attributes">
+<h2>Creating attributes<a class="headerlink" href="#creating-attributes" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
+ * id [String]
+ *   The primary key for this attribute.
+ *
+ * label [String]
+ *   The label for this attribute.
+ */
+$color_attribute = \Drupal\commerce_product\Entity\ProductAttribute::create([
+  &#39;id&#39; =&gt; &#39;color&#39;,
+  &#39;label&#39; =&gt; &#39;Color&#39;,
+]);
+$color_attribute-&gt;save();
+
+$size_attribute = \Drupal\commerce_product\Entity\ProductAttribute::create([
+  &#39;id&#39; =&gt; &#39;size&#39;,
+  &#39;label&#39; =&gt; &#39;Size&#39;,
+]);
+$size_attribute-&gt;save();
+
+// We load a service that adds the attributes to the variation type we made previously.
+$attribute_field_manager = \Drupal::service(&#39;commerce_product.attribute_field_manager&#39;);
+
+$attribute_field_manager-&gt;createField($color_attribute, &#39;my_custom_variation_type&#39;);
+$attribute_field_manager-&gt;createField($size_attribute, &#39;my_custom_variation_type&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-an-attribute">
+<h2>Loading an attribute<a class="headerlink" href="#loading-an-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [String] that was defined when creating it.
+$size_attribute = \Drupal\commerce_product\Entity\ProductAttribute::load(&#39;size&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-values-for-an-attribute">
+<h2>Creating values for an attribute<a class="headerlink" href="#creating-values-for-an-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
+ * attribute [String]
+ *   Foreign key of the attribute we want.
+ *
+ * name [String]
+ *   The name of this value.
+ */
+$red = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
+  &#39;attribute&#39; =&gt; &#39;color&#39;,
+  &#39;name&#39; =&gt; &#39;Red&#39;,
+]);
+$red-&gt;save();
+
+$blue = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
+  &#39;attribute&#39; =&gt; &#39;color&#39;,
+  &#39;name&#39; =&gt; &#39;Blue&#39;,
+]);
+$blue-&gt;save();
+
+$medium = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
+  &#39;attribute&#39; =&gt; &#39;size&#39;,
+  &#39;name&#39; =&gt; &#39;Medium&#39;,
+]);
+$medium-&gt;save();
+
+$large = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
+  &#39;attribute&#39; =&gt; &#39;size&#39;,
+  &#39;name&#39; =&gt; &#39;Large&#39;,
+]);
+$large-&gt;save();
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-an-attribute-value">
+<h2>Loading an attribute value<a class="headerlink" href="#loading-an-attribute-value" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
+//   1 would be the first one saved, 2 the next, etc.
+$red = \Drupal\commerce_product\Entity\ProductAttributeValue::load(1);
+</pre></div>
+</div>
+</div>
+<div class="section" id="assigning-attributes-to-a-variation">
+<h2>Assigning attributes to a variation<a class="headerlink" href="#assigning-attributes-to-a-variation" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say we want our hypothetical product to have two variations. One
+will be the color red and size medium, and the other will be the color
+blue and size large. // [IMPORTANT] - If a Product Variation Type has
+fields for attributes (as we added above), then variations of that type
+MUST have those attributes.</p>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
+ * attribute_&lt;ATTRIBUTE_ID&gt; [\Drupal\commerce_product\Entity\ProductAttributeValueInterface]
+ *   The attribute value entity to use for the attribute type.
+ */
+$variation_red_medium = \Drupal\commerce_product\Entity\ProductVariation::create([
+  &#39;type&#39; =&gt; &#39;my_custom_variation_type&#39;,
+  &#39;sku&#39; =&gt; &#39;product-red-medium&#39;,
+  &#39;price&#39; =&gt; new \Drupal\commerce_price\Price(&#39;10.00&#39;, &#39;USD&#39;),
+  &#39;attribute_color&#39; =&gt; $red,
+  &#39;attribute_size&#39; =&gt; $medium,
+]);
+$variation_red_medium-&gt;save();
+
+$variation_blue_large = \Drupal\commerce_product\Entity\ProductVariation::create([
+  &#39;type&#39; =&gt; &#39;my_custom_variation_type&#39;,
+  &#39;sku&#39; =&gt; &#39;product-blue-large&#39;,
+  &#39;price&#39; =&gt; new \Drupal\commerce_price\Price(&#39;10.00&#39;, &#39;USD&#39;),
+  &#39;attribute_color&#39; =&gt; $blue,
+  &#39;attribute_size&#39; =&gt; $large,
+]);
+$variation_blue_large-&gt;save();
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="products.html" class="btn btn-neutral float-right" title="Products and types" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="variations.html" class="btn btn-neutral" title="Product Variations and types" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Commerce Guys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

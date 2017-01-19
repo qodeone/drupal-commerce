@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Store recipes &mdash; Drupal Commerce 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Drupal Commerce 0.0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Code Recipes" href="index.html"/>
+        <link rel="next" title="Product Variations and types" href="variations.html"/>
+        <link rel="prev" title="Code Recipes" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Drupal Commerce
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../v1/README.html">Commerce 1.x Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Commerce 2.x</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../README.html">Commerce 2.x Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#libraries-and-dependencies">Libraries and dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#setting-up-stores">Setting up stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#managing-products">Managing products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#catalog-and-product-pages">Catalog and product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#product-merchandising">Product merchandising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#working-with-orders">Working with orders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#configuring-checkout">Configuring Checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#payments">Payments</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#code-recipes">Code Recipes</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Code Recipes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Store recipes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variations.html">Product Variations and types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="attributes.html">Product Attributes and Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="products.html">Products and types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="orders.html">Orders and order items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Drupal Commerce</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Commerce 2.x</a> &raquo;</li>
+      
+          <li><a href="index.html">Code Recipes</a> &raquo;</li>
+      
+    <li>Store recipes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/v2/recipes/stores.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="store-recipes">
+<h1>Store recipes<a class="headerlink" href="#store-recipes" title="Permalink to this headline">¶</a></h1>
+<p>Everything starts with a store. Products can belong to many stores, and
+orders belong to a single store.</p>
+<div class="section" id="creating-a-store-type">
+<h2>Creating a store type<a class="headerlink" href="#creating-a-store-type" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
+ * id [String]
+ *   The primary key for this store type.
+ *
+ * label [String]
+ *   The label for this store type.
+ *
+ * description [String]
+ *   The description for this store type.
+ */
+$store_type = \Drupal\commerce_store\Entity\StoreType::create([
+  &#39;id&#39; =&gt; &#39;custom_store_type&#39;,
+  &#39;label&#39; =&gt; &#39;My custom store type&#39;,
+  &#39;description&#39; =&gt; &#39;This is my first custom store type!&#39;,
+]);
+$store_type-&gt;save();
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-a-store-type">
+<h2>Loading a store type<a class="headerlink" href="#loading-a-store-type" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [String] that was defined when creating it.
+$store_type = \Drupal\commerce_store\Entity\StoreType::load(&#39;custom_store_type&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-store">
+<h2>Creating a store<a class="headerlink" href="#creating-a-store" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
+ * type [String] - [DEFAULT = &#39;online&#39;]
+ *   Foreign key for the store type to yse.
+ *
+ * uid [Integer]
+ *   The user id that created the store.
+ *
+ * name [String]
+ *   The store&#39;s name.
+ *
+ * mail [String]
+ *   The store&#39;s email address.
+ *
+ * address [\Drupal\address\AddressInterface]
+ *   The store&#39;s address.
+ *
+ * default_currency [String]
+ *   The currency the store uses.
+ *
+ * billing_countries [Array(String)]
+ *   Array of country codes selected for the store.
+ */
+
+// The store&#39;s address.
+$address = [
+  &#39;country_code&#39; =&gt; &#39;US&#39;,
+  &#39;address_line1&#39; =&gt; &#39;123 Street Drive&#39;,
+  &#39;locality&#39; =&gt; &#39;Beverly Hills&#39;,
+  &#39;administrative_area&#39; =&gt; &#39;CA&#39;,
+  &#39;postal_code&#39; =&gt; &#39;90210&#39;,
+];
+
+// The currency code.
+$currency = &#39;USD&#39;;
+
+// If needed, this will import the currency.
+$currency_importer = \Drupal::service(&#39;commerce_price.currency_importer&#39;);
+$currency_importer-&gt;import($currency);
+
+$store = \Drupal\commerce_store\Entity\Store::create([
+  &#39;type&#39; =&gt; &#39;custom_store_type&#39;,
+  &#39;uid&#39; =&gt; 1,
+  &#39;name&#39; =&gt; &#39;My Store&#39;,
+  &#39;mail&#39; =&gt; &#39;admin@example.com&#39;,
+  &#39;address&#39; =&gt; $address,
+  &#39;default_currency&#39; =&gt; $currency,
+  &#39;billing_countries&#39; =&gt; [&#39;US&#39;],
+]);
+$store-&gt;save();
+
+// If needed, this sets the store as the default store.
+$store_storage = \Drupal::service(&#39;entity_type.manager&#39;)-&gt;getStorage(&#39;commerce_store&#39;);
+$store_storage-&gt;markAsDefault($store);
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-a-store">
+<h2>Loading a store<a class="headerlink" href="#loading-a-store" title="Permalink to this headline">¶</a></h2>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
+//   1 would be the first one saved, 2 the next, etc.
+$store = \Drupal\commerce_store\Entity\Store::load(1);
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="variations.html" class="btn btn-neutral float-right" title="Product Variations and types" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Code Recipes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Commerce Guys.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

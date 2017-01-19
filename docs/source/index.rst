@@ -1,20 +1,17 @@
 Drupal Commerce Documentation
 =============================
 
-.. toctree::
-   :maxdepth: 2
 
-   README
+.. toctree::
+   :maxdepth: 3
+
+   introduction
    v1/README
-   v2/README
-   v2/getting-started
-   v2/getting-started/composer
-   v2/getting-started/install
+   v2/index
 
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
