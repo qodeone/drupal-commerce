@@ -4,13 +4,18 @@ Introduction
 Drupal Commerce is the leading flexible eCommerce solution for Drupal,
 powering over 50,000 online stores of all sizes.
 
-This documentation is rendered online at http://docs.drupalcommerce.org
+This documentation is rendered online at http://drupal-commerce.readthedocs.io/en/latest/
 
-Contribute
+Contribute to Documentation
+---------------------------
 
 We love contributors! Please help us improve or fix the documentation by
-opening a Pull Request. Each Pull Request is automatically built by
-`Platform.sh`_.
+editing a document and making a pull request in Github. Our documentation is
+written in Restructured Text(.rst) so please only edit a document if you are familiar
+with .rst file formatting guidelines.
+
+Our docs are written in Restructured Text, built locally with Sphinx, managed on
+Github and hosted with `ReadtheDocs`_.
 
 If you have trouble understanding any part of the documentation, please
 notify those of us who work on this section by creating an issue in our
@@ -30,3 +35,4 @@ This site is hosted on `Platform.sh`_.
 .. _Platform.sh: https://platform.sh
 .. _documentation repository: https://github.com/drupalcommerce/commerce-docs
 .. _GitHub: https://github.com/
+.. _ReadtheDocs: http://drupal-commerce.readthedocs.io/en/latest/
