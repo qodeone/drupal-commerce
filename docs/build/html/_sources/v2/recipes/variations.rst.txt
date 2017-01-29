@@ -35,6 +35,7 @@ Creating variation types
     ]);
     $variation_type->save();
 
+
 Loading a variation type
 ------------------------
 
@@ -42,6 +43,7 @@ Loading a variation type
 
     // Loading is based off of the primary key [String] that was defined when creating it.
     $variation_type = \Drupal\commerce_product\Entity\ProductVariationType::load('my_custom_variation_type');
+
 
 Creating variations
 -------------------
@@ -75,10 +77,11 @@ Creating variations
     ]);
     $variation->save();
 
+
 Loading a variation
 -------------------
 
-.. code:: php
+.. code-block:: php
 
     // Loading is based off of the primary key [Integer]
     //   1 would be the first one saved, 2 the next, etc.

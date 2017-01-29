@@ -166,95 +166,95 @@
 orders belong to a single store.</p>
 <div class="section" id="creating-a-store-type">
 <h2>Creating a store type<a class="headerlink" href="#creating-a-store-type" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * id [String]
- *   The primary key for this store type.
- *
- * label [String]
- *   The label for this store type.
- *
- * description [String]
- *   The description for this store type.
- */
-$store_type = \Drupal\commerce_store\Entity\StoreType::create([
-  &#39;id&#39; =&gt; &#39;custom_store_type&#39;,
-  &#39;label&#39; =&gt; &#39;My custom store type&#39;,
-  &#39;description&#39; =&gt; &#39;This is my first custom store type!&#39;,
-]);
-$store_type-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * id [String]</span>
+<span class="sd"> *   The primary key for this store type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * label [String]</span>
+<span class="sd"> *   The label for this store type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * description [String]</span>
+<span class="sd"> *   The description for this store type.</span>
+<span class="sd"> */</span>
+<span class="nv">$store_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_store\Entity\StoreType</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_store_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My custom store type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;This is my first custom store type!&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$store_type</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-a-store-type">
 <h2>Loading a store type<a class="headerlink" href="#loading-a-store-type" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [String] that was defined when creating it.
-$store_type = \Drupal\commerce_store\Entity\StoreType::load(&#39;custom_store_type&#39;);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [String] that was defined when creating it.</span>
+<span class="nv">$store_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_store\Entity\StoreType</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;custom_store_type&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-a-store">
 <h2>Creating a store<a class="headerlink" href="#creating-a-store" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * type [String] - [DEFAULT = &#39;online&#39;]
- *   Foreign key for the store type to yse.
- *
- * uid [Integer]
- *   The user id that created the store.
- *
- * name [String]
- *   The store&#39;s name.
- *
- * mail [String]
- *   The store&#39;s email address.
- *
- * address [\Drupal\address\AddressInterface]
- *   The store&#39;s address.
- *
- * default_currency [String]
- *   The currency the store uses.
- *
- * billing_countries [Array(String)]
- *   Array of country codes selected for the store.
- */
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * type [String] - [DEFAULT = &#39;online&#39;]</span>
+<span class="sd"> *   Foreign key for the store type to yse.</span>
+<span class="sd"> *</span>
+<span class="sd"> * uid [Integer]</span>
+<span class="sd"> *   The user id that created the store.</span>
+<span class="sd"> *</span>
+<span class="sd"> * name [String]</span>
+<span class="sd"> *   The store&#39;s name.</span>
+<span class="sd"> *</span>
+<span class="sd"> * mail [String]</span>
+<span class="sd"> *   The store&#39;s email address.</span>
+<span class="sd"> *</span>
+<span class="sd"> * address [\Drupal\address\AddressInterface]</span>
+<span class="sd"> *   The store&#39;s address.</span>
+<span class="sd"> *</span>
+<span class="sd"> * default_currency [String]</span>
+<span class="sd"> *   The currency the store uses.</span>
+<span class="sd"> *</span>
+<span class="sd"> * billing_countries [Array(String)]</span>
+<span class="sd"> *   Array of country codes selected for the store.</span>
+<span class="sd"> */</span>
 
-// The store&#39;s address.
-$address = [
-  &#39;country_code&#39; =&gt; &#39;US&#39;,
-  &#39;address_line1&#39; =&gt; &#39;123 Street Drive&#39;,
-  &#39;locality&#39; =&gt; &#39;Beverly Hills&#39;,
-  &#39;administrative_area&#39; =&gt; &#39;CA&#39;,
-  &#39;postal_code&#39; =&gt; &#39;90210&#39;,
-];
+<span class="c1">// The store&#39;s address.</span>
+<span class="nv">$address</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;country_code&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;address_line1&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;123 Street Drive&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;locality&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Beverly Hills&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;administrative_area&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;postal_code&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;90210&#39;</span><span class="p">,</span>
+<span class="p">];</span>
 
-// The currency code.
-$currency = &#39;USD&#39;;
+<span class="c1">// The currency code.</span>
+<span class="nv">$currency</span> <span class="o">=</span> <span class="s1">&#39;USD&#39;</span><span class="p">;</span>
 
-// If needed, this will import the currency.
-$currency_importer = \Drupal::service(&#39;commerce_price.currency_importer&#39;);
-$currency_importer-&gt;import($currency);
+<span class="c1">// If needed, this will import the currency.</span>
+<span class="nv">$currency_importer</span> <span class="o">=</span> <span class="nx">\Drupal</span><span class="o">::</span><span class="na">service</span><span class="p">(</span><span class="s1">&#39;commerce_price.currency_importer&#39;</span><span class="p">);</span>
+<span class="nv">$currency_importer</span><span class="o">-&gt;</span><span class="na">import</span><span class="p">(</span><span class="nv">$currency</span><span class="p">);</span>
 
-$store = \Drupal\commerce_store\Entity\Store::create([
-  &#39;type&#39; =&gt; &#39;custom_store_type&#39;,
-  &#39;uid&#39; =&gt; 1,
-  &#39;name&#39; =&gt; &#39;My Store&#39;,
-  &#39;mail&#39; =&gt; &#39;admin@example.com&#39;,
-  &#39;address&#39; =&gt; $address,
-  &#39;default_currency&#39; =&gt; $currency,
-  &#39;billing_countries&#39; =&gt; [&#39;US&#39;],
-]);
-$store-&gt;save();
+<span class="nv">$store</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_store\Entity\Store</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_store_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;uid&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Store&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;mail&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin@example.com&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;address&#39;</span> <span class="o">=&gt;</span> <span class="nv">$address</span><span class="p">,</span>
+  <span class="s1">&#39;default_currency&#39;</span> <span class="o">=&gt;</span> <span class="nv">$currency</span><span class="p">,</span>
+  <span class="s1">&#39;billing_countries&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">],</span>
+<span class="p">]);</span>
+<span class="nv">$store</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-// If needed, this sets the store as the default store.
-$store_storage = \Drupal::service(&#39;entity_type.manager&#39;)-&gt;getStorage(&#39;commerce_store&#39;);
-$store_storage-&gt;markAsDefault($store);
+<span class="c1">// If needed, this sets the store as the default store.</span>
+<span class="nv">$store_storage</span> <span class="o">=</span> <span class="nx">\Drupal</span><span class="o">::</span><span class="na">service</span><span class="p">(</span><span class="s1">&#39;entity_type.manager&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getStorage</span><span class="p">(</span><span class="s1">&#39;commerce_store&#39;</span><span class="p">);</span>
+<span class="nv">$store_storage</span><span class="o">-&gt;</span><span class="na">markAsDefault</span><span class="p">(</span><span class="nv">$store</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-a-store">
 <h2>Loading a store<a class="headerlink" href="#loading-a-store" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
-//   1 would be the first one saved, 2 the next, etc.
-$store = \Drupal\commerce_store\Entity\Store::load(1);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [Integer]</span>
+<span class="c1">//   1 would be the first one saved, 2 the next, etc.</span>
+<span class="nv">$store</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_store\Entity\Store</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

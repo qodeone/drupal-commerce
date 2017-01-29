@@ -163,202 +163,202 @@
 <h1>Orders and order items<a class="headerlink" href="#orders-and-order-items" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="creating-order-types">
 <h2>Creating order types<a class="headerlink" href="#creating-order-types" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * id [String]
- *   The primary key for this order type.
- *
- * label [String]
- *   The label for this order type.
- *
- * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]
- *   [AVAILABLE = FALSE, TRUE]
- *   Whether or not it&#39;s enabled or disabled. 1 for enabled.
- *
- * workflow [String] - [DEFAULT = order_default]
- *   [AVAILABLE = order_default, order_default_validation, order_fulfillment, order_fulfillment_validation]
- *   The workflow id to use as the workflow.
- *
- * refresh_mode [String] - [DEFAULT = always]
- *   [AVAILABLE = always, customer]
- *   The refresh mode to use as the refresh mode.
- *
- * refresh_frequency [Integer] - [DEFAULT = 30]
- *   The refresh freuency in seconds.
- */
-$order_type = \Drupal\commerce_order\Entity\OrderType::create([
-  &#39;status&#39; =&gt; TRUE,
-  &#39;id&#39; =&gt; &#39;custom_order_type&#39;,
-  &#39;label&#39; =&gt; &#39;My custom order type&#39;,
-  &#39;workflow&#39; =&gt; &#39;order_default&#39;,
-  &#39;refresh_mode&#39; =&gt; &#39;always&#39;,
-  &#39;refresh_frequency&#39; =&gt; 30,
-]);
-$order_type-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * id [String]</span>
+<span class="sd"> *   The primary key for this order type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * label [String]</span>
+<span class="sd"> *   The label for this order type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]</span>
+<span class="sd"> *   [AVAILABLE = FALSE, TRUE]</span>
+<span class="sd"> *   Whether or not it&#39;s enabled or disabled. 1 for enabled.</span>
+<span class="sd"> *</span>
+<span class="sd"> * workflow [String] - [DEFAULT = order_default]</span>
+<span class="sd"> *   [AVAILABLE = order_default, order_default_validation, order_fulfillment, order_fulfillment_validation]</span>
+<span class="sd"> *   The workflow id to use as the workflow.</span>
+<span class="sd"> *</span>
+<span class="sd"> * refresh_mode [String] - [DEFAULT = always]</span>
+<span class="sd"> *   [AVAILABLE = always, customer]</span>
+<span class="sd"> *   The refresh mode to use as the refresh mode.</span>
+<span class="sd"> *</span>
+<span class="sd"> * refresh_frequency [Integer] - [DEFAULT = 30]</span>
+<span class="sd"> *   The refresh freuency in seconds.</span>
+<span class="sd"> */</span>
+<span class="nv">$order_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\OrderType</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+  <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_order_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My custom order type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;workflow&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;order_default&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;refresh_mode&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;always&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;refresh_frequency&#39;</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$order_type</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-// This must be called after saving.
-commerce_order_add_order_items_field($order_type);
+<span class="c1">// This must be called after saving.</span>
+<span class="nx">commerce_order_add_order_items_field</span><span class="p">(</span><span class="nv">$order_type</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-an-order-type">
 <h2>Loading an order type<a class="headerlink" href="#loading-an-order-type" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [String] that was defined when creating it.
-$order_type = \Drupal\commerce_order\Entity\OrderType::load(&#39;custom_order_type&#39;);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [String] that was defined when creating it.</span>
+<span class="nv">$order_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\OrderType</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;custom_order_type&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-order-item-types">
 <h2>Creating order item types<a class="headerlink" href="#creating-order-item-types" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * id [String]
- *   The primary key for this order item type.
- *
- * label [String]
- *   The label for this order item type.
- *
- * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]
- *   [AVAILABLE = FALSE, TRUE]
- *   Whether or not it&#39;s enabled or disabled. 1 for enabled.
- *
- * purchasableEntityType [String] - [DEFAULT = commerce_product_variation]
- *   Foreign key to use for the purchasable entity type.
- *
- * orderType [String] - [DEFAULT = default]
- *   Foreign key to use for the order type.
- */
-$order_item_type = \Drupal\commerce_order\Entity\OrderItemType::create([
-  &#39;id&#39; =&gt; &#39;custom_order_item_type&#39;,
-  &#39;label&#39; =&gt; &#39;My custom order item type&#39;,
-  &#39;status&#39; =&gt; TRUE,
-  &#39;purchasableEntityType&#39; =&gt; &#39;commerce_product_variation&#39;,
-  &#39;orderType&#39; =&gt; &#39;custom_order_type&#39;,
-]);
-$order_item_type-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * id [String]</span>
+<span class="sd"> *   The primary key for this order item type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * label [String]</span>
+<span class="sd"> *   The label for this order item type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]</span>
+<span class="sd"> *   [AVAILABLE = FALSE, TRUE]</span>
+<span class="sd"> *   Whether or not it&#39;s enabled or disabled. 1 for enabled.</span>
+<span class="sd"> *</span>
+<span class="sd"> * purchasableEntityType [String] - [DEFAULT = commerce_product_variation]</span>
+<span class="sd"> *   Foreign key to use for the purchasable entity type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * orderType [String] - [DEFAULT = default]</span>
+<span class="sd"> *   Foreign key to use for the order type.</span>
+<span class="sd"> */</span>
+<span class="nv">$order_item_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\OrderItemType</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_order_item_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My custom order item type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+  <span class="s1">&#39;purchasableEntityType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;commerce_product_variation&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;orderType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_order_type&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$order_item_type</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-an-order-item-type">
 <h2>Loading an order item type<a class="headerlink" href="#loading-an-order-item-type" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [String] that was defined when creating it.
-$order_item_type = \Drupal\commerce_order\Entity\OrderItemType::load(&#39;custom_order_item_type&#39;);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [String] that was defined when creating it.</span>
+<span class="nv">$order_item_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\OrderItemType</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;custom_order_item_type&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-order-items">
 <h2>Creating order items<a class="headerlink" href="#creating-order-items" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * type [String] - [DEFAULT = product_variation]
- *   Foreign key to use for the order item type.
- *
- * purchased_entity [Integer | \Drupal\commerce\PurchasableEntityInterface]
- *    Foreign key to use for the purchased entity. Either the id, or object implementing the interface.
- *
- * quantity [Integer]
- *   How many of the purchased items.
- *
- * unit_price [\Drupal\commerce_price\Price]
- *   The price per each item, not the total.
- *
- * adjustments [OPTIONAL] - [Array(Drupal\commerce_order\Adjustment)]
- *   Array of any price adjustments.
- */
-$order_item = \Drupal\commerce_order\Entity\OrderItem::create([
-  &#39;type&#39; =&gt; &#39;custom_order_item_type&#39;,
-  &#39;purchased_entity&#39; =&gt; $variation_red_medium,
-  &#39;quantity&#39; =&gt; 2,
-  &#39;unit_price&#39; =&gt; $variation_red_medium-&gt;getPrice(),
-]);
-$order_item-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * type [String] - [DEFAULT = product_variation]</span>
+<span class="sd"> *   Foreign key to use for the order item type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * purchased_entity [Integer | \Drupal\commerce\PurchasableEntityInterface]</span>
+<span class="sd"> *    Foreign key to use for the purchased entity. Either the id, or object implementing the interface.</span>
+<span class="sd"> *</span>
+<span class="sd"> * quantity [Integer]</span>
+<span class="sd"> *   How many of the purchased items.</span>
+<span class="sd"> *</span>
+<span class="sd"> * unit_price [\Drupal\commerce_price\Price]</span>
+<span class="sd"> *   The price per each item, not the total.</span>
+<span class="sd"> *</span>
+<span class="sd"> * adjustments [OPTIONAL] - [Array(Drupal\commerce_order\Adjustment)]</span>
+<span class="sd"> *   Array of any price adjustments.</span>
+<span class="sd"> */</span>
+<span class="nv">$order_item</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\OrderItem</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_order_item_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;purchased_entity&#39;</span> <span class="o">=&gt;</span> <span class="nv">$variation_red_medium</span><span class="p">,</span>
+  <span class="s1">&#39;quantity&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s1">&#39;unit_price&#39;</span> <span class="o">=&gt;</span> <span class="nv">$variation_red_medium</span><span class="o">-&gt;</span><span class="na">getPrice</span><span class="p">(),</span>
+<span class="p">]);</span>
+<span class="nv">$order_item</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-// You can set the quantity with setQuantity.
-$order_item-&gt;setQuantity(&#39;1&#39;);
-$order_item-&gt;save();
+<span class="c1">// You can set the quantity with setQuantity.</span>
+<span class="nv">$order_item</span><span class="o">-&gt;</span><span class="na">setQuantity</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nv">$order_item</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-// You can also set the price with setUnitPrice.
-$unit_price = new \Drupal\commerce_price\Price(&#39;9.99&#39;, &#39;USD&#39;);
-$order_item-&gt;setUnitPrice($unit_price);
-$order_item-&gt;save();
+<span class="c1">// You can also set the price with setUnitPrice.</span>
+<span class="nv">$unit_price</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Drupal\commerce_price\Price</span><span class="p">(</span><span class="s1">&#39;9.99&#39;</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">);</span>
+<span class="nv">$order_item</span><span class="o">-&gt;</span><span class="na">setUnitPrice</span><span class="p">(</span><span class="nv">$unit_price</span><span class="p">);</span>
+<span class="nv">$order_item</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-an-order-item">
 <h2>Loading an order item<a class="headerlink" href="#loading-an-order-item" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
-//   1 would be the first one saved, 2 the next, etc.
-$order_item = \Drupal\commerce_order\Entity\OrderItem::load(1);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [Integer]</span>
+<span class="c1">//   1 would be the first one saved, 2 the next, etc.</span>
+<span class="nv">$order_item</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\OrderItem</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-orders">
 <h2>Creating orders<a class="headerlink" href="#creating-orders" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * type [String] - [DEFAULT = default]
- *   Foreign key to use for the order type.
- *
- * state [String] - [DEFAULT = draft]
- *   [AVAILABLE = draft, completed, canceled]
- *   The state the order is in.
- *
- * mail [String]
- *   The email address the order belongs to.
- *
- * uid [Integer]
- *   The user id the order belongs to.
- *
- * ip_address [String]
- *   The ip address the order was created from.
- *
- * order_number [Integer | String] - [OPTIONAL, DEFAULTS TO id]
- *   The order number for the order. If left out, defaults to the order&#39;s id.
- *
- * billing_profile [\Drupal\profile\Entity\ProfileInterface]
- *   The billing profile for the order.
- *
- * store_id [Integer]
- *   The foreign key for the store that this order belongs to.
- *
- * order_items [Array(\Drupal\commerce_order\Entity\OrderItemInterface]
- *   Array of all the order items that belong to this order.
- *
- * adjustments [OPTIONAL] - [Array(Drupal\commerce_order\Adjustment)]
- *   Array of any price adjustments.
- *
- * placed [Timestamp]
- *   The time the order was placed.
- *
- * completed [OPTIONAL] - [Timestamp]
- *   The time the order was completed.
- */
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * type [String] - [DEFAULT = default]</span>
+<span class="sd"> *   Foreign key to use for the order type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * state [String] - [DEFAULT = draft]</span>
+<span class="sd"> *   [AVAILABLE = draft, completed, canceled]</span>
+<span class="sd"> *   The state the order is in.</span>
+<span class="sd"> *</span>
+<span class="sd"> * mail [String]</span>
+<span class="sd"> *   The email address the order belongs to.</span>
+<span class="sd"> *</span>
+<span class="sd"> * uid [Integer]</span>
+<span class="sd"> *   The user id the order belongs to.</span>
+<span class="sd"> *</span>
+<span class="sd"> * ip_address [String]</span>
+<span class="sd"> *   The ip address the order was created from.</span>
+<span class="sd"> *</span>
+<span class="sd"> * order_number [Integer | String] - [OPTIONAL, DEFAULTS TO id]</span>
+<span class="sd"> *   The order number for the order. If left out, defaults to the order&#39;s id.</span>
+<span class="sd"> *</span>
+<span class="sd"> * billing_profile [\Drupal\profile\Entity\ProfileInterface]</span>
+<span class="sd"> *   The billing profile for the order.</span>
+<span class="sd"> *</span>
+<span class="sd"> * store_id [Integer]</span>
+<span class="sd"> *   The foreign key for the store that this order belongs to.</span>
+<span class="sd"> *</span>
+<span class="sd"> * order_items [Array(\Drupal\commerce_order\Entity\OrderItemInterface]</span>
+<span class="sd"> *   Array of all the order items that belong to this order.</span>
+<span class="sd"> *</span>
+<span class="sd"> * adjustments [OPTIONAL] - [Array(Drupal\commerce_order\Adjustment)]</span>
+<span class="sd"> *   Array of any price adjustments.</span>
+<span class="sd"> *</span>
+<span class="sd"> * placed [Timestamp]</span>
+<span class="sd"> *   The time the order was placed.</span>
+<span class="sd"> *</span>
+<span class="sd"> * completed [OPTIONAL] - [Timestamp]</span>
+<span class="sd"> *   The time the order was completed.</span>
+<span class="sd"> */</span>
 
-// Create the billing profile.
-$profile = \Drupal\profile\Entity\Profile::create([
-  &#39;type&#39; =&gt; &#39;customer&#39;,
-  &#39;uid&#39; =&gt; 1,
-]);
-$profile-&gt;save();
+<span class="c1">// Create the billing profile.</span>
+<span class="nv">$profile</span> <span class="o">=</span> <span class="nx">\Drupal\profile\Entity\Profile</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;customer&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;uid&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$profile</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-// Next, we create the order.
-$order = \Drupal\commerce_order\Entity\Order::create([
-  &#39;type&#39; =&gt; &#39;custom_order_type&#39;,
-  &#39;state&#39; =&gt; &#39;draft&#39;,
-  &#39;mail&#39; =&gt; &#39;user@example.com&#39;,
-  &#39;uid&#39; =&gt; 1,
-  &#39;ip_address&#39; =&gt; &#39;127.0.0.1&#39;,
-  &#39;order_number&#39; =&gt; &#39;6&#39;,
-  &#39;billing_profile&#39; =&gt; $profile,
-  &#39;store_id&#39; =&gt; $store-&gt;id(),
-  &#39;order_items&#39; =&gt; [$order_item],
-  &#39;placed&#39; =&gt; time(),
-]);
-$order-&gt;save();
+<span class="c1">// Next, we create the order.</span>
+<span class="nv">$order</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\Order</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;custom_order_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;state&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;draft&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;mail&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;uid&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">&#39;ip_address&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;order_number&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;billing_profile&#39;</span> <span class="o">=&gt;</span> <span class="nv">$profile</span><span class="p">,</span>
+  <span class="s1">&#39;store_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">(),</span>
+  <span class="s1">&#39;order_items&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nv">$order_item</span><span class="p">],</span>
+  <span class="s1">&#39;placed&#39;</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">(),</span>
+<span class="p">]);</span>
+<span class="nv">$order</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-an-order">
 <h2>Loading an order<a class="headerlink" href="#loading-an-order" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
-//   1 would be the first one saved, 2 the next, etc.
-$order = \Drupal\commerce_order\Entity\Order::load(1);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [Integer]</span>
+<span class="c1">//   1 would be the first one saved, 2 the next, etc.</span>
+<span class="nv">$order</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_order\Entity\Order</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

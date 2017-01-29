@@ -168,80 +168,80 @@ create two attributes (color and size) and add them to the variation
 type we made previously.</p>
 <div class="section" id="creating-attributes">
 <h2>Creating attributes<a class="headerlink" href="#creating-attributes" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * id [String]
- *   The primary key for this attribute.
- *
- * label [String]
- *   The label for this attribute.
- */
-$color_attribute = \Drupal\commerce_product\Entity\ProductAttribute::create([
-  &#39;id&#39; =&gt; &#39;color&#39;,
-  &#39;label&#39; =&gt; &#39;Color&#39;,
-]);
-$color_attribute-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * id [String]</span>
+<span class="sd"> *   The primary key for this attribute.</span>
+<span class="sd"> *</span>
+<span class="sd"> * label [String]</span>
+<span class="sd"> *   The label for this attribute.</span>
+<span class="sd"> */</span>
+<span class="nv">$color_attribute</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttribute</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Color&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$color_attribute</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-$size_attribute = \Drupal\commerce_product\Entity\ProductAttribute::create([
-  &#39;id&#39; =&gt; &#39;size&#39;,
-  &#39;label&#39; =&gt; &#39;Size&#39;,
-]);
-$size_attribute-&gt;save();
+<span class="nv">$size_attribute</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttribute</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Size&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$size_attribute</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-// We load a service that adds the attributes to the variation type we made previously.
-$attribute_field_manager = \Drupal::service(&#39;commerce_product.attribute_field_manager&#39;);
+<span class="c1">// We load a service that adds the attributes to the variation type we made previously.</span>
+<span class="nv">$attribute_field_manager</span> <span class="o">=</span> <span class="nx">\Drupal</span><span class="o">::</span><span class="na">service</span><span class="p">(</span><span class="s1">&#39;commerce_product.attribute_field_manager&#39;</span><span class="p">);</span>
 
-$attribute_field_manager-&gt;createField($color_attribute, &#39;my_custom_variation_type&#39;);
-$attribute_field_manager-&gt;createField($size_attribute, &#39;my_custom_variation_type&#39;);
+<span class="nv">$attribute_field_manager</span><span class="o">-&gt;</span><span class="na">createField</span><span class="p">(</span><span class="nv">$color_attribute</span><span class="p">,</span> <span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">);</span>
+<span class="nv">$attribute_field_manager</span><span class="o">-&gt;</span><span class="na">createField</span><span class="p">(</span><span class="nv">$size_attribute</span><span class="p">,</span> <span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-an-attribute">
 <h2>Loading an attribute<a class="headerlink" href="#loading-an-attribute" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [String] that was defined when creating it.
-$size_attribute = \Drupal\commerce_product\Entity\ProductAttribute::load(&#39;size&#39;);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [String] that was defined when creating it.</span>
+<span class="nv">$size_attribute</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttribute</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-values-for-an-attribute">
 <h2>Creating values for an attribute<a class="headerlink" href="#creating-values-for-an-attribute" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * attribute [String]
- *   Foreign key of the attribute we want.
- *
- * name [String]
- *   The name of this value.
- */
-$red = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
-  &#39;attribute&#39; =&gt; &#39;color&#39;,
-  &#39;name&#39; =&gt; &#39;Red&#39;,
-]);
-$red-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * attribute [String]</span>
+<span class="sd"> *   Foreign key of the attribute we want.</span>
+<span class="sd"> *</span>
+<span class="sd"> * name [String]</span>
+<span class="sd"> *   The name of this value.</span>
+<span class="sd"> */</span>
+<span class="nv">$red</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttributeValue</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$red</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-$blue = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
-  &#39;attribute&#39; =&gt; &#39;color&#39;,
-  &#39;name&#39; =&gt; &#39;Blue&#39;,
-]);
-$blue-&gt;save();
+<span class="nv">$blue</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttributeValue</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$blue</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-$medium = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
-  &#39;attribute&#39; =&gt; &#39;size&#39;,
-  &#39;name&#39; =&gt; &#39;Medium&#39;,
-]);
-$medium-&gt;save();
+<span class="nv">$medium</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttributeValue</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$medium</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-$large = \Drupal\commerce_product\Entity\ProductAttributeValue::create([
-  &#39;attribute&#39; =&gt; &#39;size&#39;,
-  &#39;name&#39; =&gt; &#39;Large&#39;,
-]);
-$large-&gt;save();
+<span class="nv">$large</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttributeValue</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Large&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$large</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-an-attribute-value">
 <h2>Loading an attribute value<a class="headerlink" href="#loading-an-attribute-value" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
-//   1 would be the first one saved, 2 the next, etc.
-$red = \Drupal\commerce_product\Entity\ProductAttributeValue::load(1);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [Integer]</span>
+<span class="c1">//   1 would be the first one saved, 2 the next, etc.</span>
+<span class="nv">$red</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductAttributeValue</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -252,27 +252,27 @@ will be the color red and size medium, and the other will be the color
 blue and size large. // [IMPORTANT] - If a Product Variation Type has
 fields for attributes (as we added above), then variations of that type
 MUST have those attributes.</p>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>/**
- * attribute_&lt;ATTRIBUTE_ID&gt; [\Drupal\commerce_product\Entity\ProductAttributeValueInterface]
- *   The attribute value entity to use for the attribute type.
- */
-$variation_red_medium = \Drupal\commerce_product\Entity\ProductVariation::create([
-  &#39;type&#39; =&gt; &#39;my_custom_variation_type&#39;,
-  &#39;sku&#39; =&gt; &#39;product-red-medium&#39;,
-  &#39;price&#39; =&gt; new \Drupal\commerce_price\Price(&#39;10.00&#39;, &#39;USD&#39;),
-  &#39;attribute_color&#39; =&gt; $red,
-  &#39;attribute_size&#39; =&gt; $medium,
-]);
-$variation_red_medium-&gt;save();
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * attribute_&lt;ATTRIBUTE_ID&gt; [\Drupal\commerce_product\Entity\ProductAttributeValueInterface]</span>
+<span class="sd"> *   The attribute value entity to use for the attribute type.</span>
+<span class="sd"> */</span>
+<span class="nv">$variation_red_medium</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductVariation</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sku&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;product-red-medium&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">\Drupal\commerce_price\Price</span><span class="p">(</span><span class="s1">&#39;10.00&#39;</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">),</span>
+  <span class="s1">&#39;attribute_color&#39;</span> <span class="o">=&gt;</span> <span class="nv">$red</span><span class="p">,</span>
+  <span class="s1">&#39;attribute_size&#39;</span> <span class="o">=&gt;</span> <span class="nv">$medium</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$variation_red_medium</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-$variation_blue_large = \Drupal\commerce_product\Entity\ProductVariation::create([
-  &#39;type&#39; =&gt; &#39;my_custom_variation_type&#39;,
-  &#39;sku&#39; =&gt; &#39;product-blue-large&#39;,
-  &#39;price&#39; =&gt; new \Drupal\commerce_price\Price(&#39;10.00&#39;, &#39;USD&#39;),
-  &#39;attribute_color&#39; =&gt; $blue,
-  &#39;attribute_size&#39; =&gt; $large,
-]);
-$variation_blue_large-&gt;save();
+<span class="nv">$variation_blue_large</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductVariation</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sku&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;product-blue-large&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">\Drupal\commerce_price\Price</span><span class="p">(</span><span class="s1">&#39;10.00&#39;</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">),</span>
+  <span class="s1">&#39;attribute_color&#39;</span> <span class="o">=&gt;</span> <span class="nv">$blue</span><span class="p">,</span>
+  <span class="s1">&#39;attribute_size&#39;</span> <span class="o">=&gt;</span> <span class="nv">$large</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$variation_blue_large</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>

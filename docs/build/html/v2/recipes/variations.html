@@ -166,77 +166,77 @@
 need at least one variation.</p>
 <div class="section" id="creating-variation-types">
 <h2>Creating variation types<a class="headerlink" href="#creating-variation-types" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">/**</span>
-<span class="x"> * id [String]</span>
-<span class="x"> *   The primary key for this variation type.</span>
-<span class="x"> *</span>
-<span class="x"> * label [String]</span>
-<span class="x"> *   The label for this variation type.</span>
-<span class="x"> *</span>
-<span class="x"> * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]</span>
-<span class="x"> *   [AVAILABLE = FALSE, TRUE]</span>
-<span class="x"> *   Whether or not it&#39;s enabled or disabled. 1 for enabled.</span>
-<span class="x"> *</span>
-<span class="x"> * orderItemType [String] - [DEFAULT = default]</span>
-<span class="x"> *   Foreign key for the order item type to use.</span>
-<span class="x"> *</span>
-<span class="x"> * generateTitle [Bool] - [DEFAULT = TRUE]</span>
-<span class="x"> *   Whether or not it should generate the title based off of product label and attributes.</span>
-<span class="x"> */</span>
-<span class="x">$variation_type = \Drupal\commerce_product\Entity\ProductVariationType::create([</span>
-<span class="x">  &#39;id&#39; =&gt; &#39;my_custom_variation_type&#39;,</span>
-<span class="x">  &#39;label&#39; =&gt; &#39;Variation Type With Color&#39;,</span>
-<span class="x">  &#39;status&#39; =&gt; TRUE,</span>
-<span class="x">  &#39;orderItemType&#39; =&gt; &#39;default&#39;,</span>
-<span class="x">  &#39;generateTitle&#39; =&gt; TRUE,</span>
-<span class="x">]);</span>
-<span class="x">$variation_type-&gt;save();</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * id [String]</span>
+<span class="sd"> *   The primary key for this variation type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * label [String]</span>
+<span class="sd"> *   The label for this variation type.</span>
+<span class="sd"> *</span>
+<span class="sd"> * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]</span>
+<span class="sd"> *   [AVAILABLE = FALSE, TRUE]</span>
+<span class="sd"> *   Whether or not it&#39;s enabled or disabled. 1 for enabled.</span>
+<span class="sd"> *</span>
+<span class="sd"> * orderItemType [String] - [DEFAULT = default]</span>
+<span class="sd"> *   Foreign key for the order item type to use.</span>
+<span class="sd"> *</span>
+<span class="sd"> * generateTitle [Bool] - [DEFAULT = TRUE]</span>
+<span class="sd"> *   Whether or not it should generate the title based off of product label and attributes.</span>
+<span class="sd"> */</span>
+<span class="nv">$variation_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductVariationType</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Variation Type With Color&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+  <span class="s1">&#39;orderItemType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;generateTitle&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+<span class="p">]);</span>
+<span class="nv">$variation_type</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-a-variation-type">
 <h2>Loading a variation type<a class="headerlink" href="#loading-a-variation-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">// Loading is based off of the primary key [String] that was defined when creating it.</span>
-<span class="x">$variation_type = \Drupal\commerce_product\Entity\ProductVariationType::load(&#39;my_custom_variation_type&#39;);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [String] that was defined when creating it.</span>
+<span class="nv">$variation_type</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductVariationType</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-variations">
 <h2>Creating variations<a class="headerlink" href="#creating-variations" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">/**</span>
-<span class="x"> * type [String] - [DEFAULT = default]</span>
-<span class="x"> *   Foreign key of the variation type to use.</span>
-<span class="x"> *</span>
-<span class="x"> * sku [String]</span>
-<span class="x"> *   The sku for this variation.</span>
-<span class="x"> *</span>
-<span class="x"> * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]</span>
-<span class="x"> *   [AVAILABLE = FALSE, TRUE]</span>
-<span class="x"> *   Whether or not it&#39;s enabled or disabled. 1 for enabled.</span>
-<span class="x"> *</span>
-<span class="x"> * price [\Drupal\commerce_price\Price] - [OPTIONAL]</span>
-<span class="x"> *   The price for this variation.</span>
-<span class="x"> *</span>
-<span class="x"> * title [String] - [POTENTIALLY NOT REQUIRED]</span>
-<span class="x"> *   The title for the product variation.</span>
-<span class="x"> *   If the variation type is set to generate a title, this is not used.</span>
-<span class="x"> *   Otherwise, a title must be given.</span>
-<span class="x"> */</span>
-<span class="x">$variation = \Drupal\commerce_product\Entity\ProductVariation::create([</span>
-<span class="x">  &#39;type&#39; =&gt; &#39;my_custom_variation_type&#39;,</span>
-<span class="x">  &#39;sku&#39; =&gt; &#39;test-product-01&#39;,</span>
-<span class="x">  &#39;status&#39; =&gt; TRUE,</span>
-<span class="x">  &#39;price&#39; =&gt; new \Drupal\commerce_price\Price(&#39;24.99&#39;, &#39;USD&#39;),</span>
-<span class="x">]);</span>
-<span class="x">$variation-&gt;save();</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * type [String] - [DEFAULT = default]</span>
+<span class="sd"> *   Foreign key of the variation type to use.</span>
+<span class="sd"> *</span>
+<span class="sd"> * sku [String]</span>
+<span class="sd"> *   The sku for this variation.</span>
+<span class="sd"> *</span>
+<span class="sd"> * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]</span>
+<span class="sd"> *   [AVAILABLE = FALSE, TRUE]</span>
+<span class="sd"> *   Whether or not it&#39;s enabled or disabled. 1 for enabled.</span>
+<span class="sd"> *</span>
+<span class="sd"> * price [\Drupal\commerce_price\Price] - [OPTIONAL]</span>
+<span class="sd"> *   The price for this variation.</span>
+<span class="sd"> *</span>
+<span class="sd"> * title [String] - [POTENTIALLY NOT REQUIRED]</span>
+<span class="sd"> *   The title for the product variation.</span>
+<span class="sd"> *   If the variation type is set to generate a title, this is not used.</span>
+<span class="sd"> *   Otherwise, a title must be given.</span>
+<span class="sd"> */</span>
+<span class="nv">$variation</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductVariation</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_custom_variation_type&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sku&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test-product-01&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+  <span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">\Drupal\commerce_price\Price</span><span class="p">(</span><span class="s1">&#39;24.99&#39;</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">),</span>
+<span class="p">]);</span>
+<span class="nv">$variation</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-a-variation">
 <h2>Loading a variation<a class="headerlink" href="#loading-a-variation" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default"><div class="highlight"><pre><span></span>// Loading is based off of the primary key [Integer]
-//   1 would be the first one saved, 2 the next, etc.
-$variation = \Drupal\commerce_product\Entity\ProductVariation::load(1);
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Loading is based off of the primary key [Integer]</span>
+<span class="c1">//   1 would be the first one saved, 2 the next, etc.</span>
+<span class="nv">$variation</span> <span class="o">=</span> <span class="nx">\Drupal\commerce_product\Entity\ProductVariation</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
