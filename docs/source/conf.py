@@ -91,6 +91,7 @@ html_theme = 'better'
 # documentation.
 #
 # html_theme_options = {}
+html_theme_options = { 'logo_only': True }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
