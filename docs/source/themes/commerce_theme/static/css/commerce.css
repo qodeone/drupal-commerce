@@ -30,6 +30,7 @@ body{
     color: #aaaaaa;
 }
 
+div[class^='highlight'] pre,
 .highlight-xml .highlight pre,
 .highlight-md .highlight pre,
 .highlight-md .highlight pre span.gh,
