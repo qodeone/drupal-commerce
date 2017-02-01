@@ -68,10 +68,10 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
+exclude_patterns = ['Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'monokai'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -84,9 +84,14 @@ todo_include_todos = False
 #
 import sphinx_rtd_theme
 
-html_theme = "sphinx_rtd_theme"
+html_theme = "commerce_theme"
 
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path(), "themes"]
+
+html_context = {
+    "display_github": True,
+    "extra_css_files" : ['_static/css/commerce.css']
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -98,7 +103,9 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ['_static']
+html_static_path = ['_static']
 
+html_favicon = "favicon.ico"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
