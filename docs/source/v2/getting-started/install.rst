@@ -52,20 +52,20 @@ Run these commands in the root of your website:
 
 #. Add the Drupal Packagist repository
 
-``sh  composer config repositories.drupal composer https://packages.drupal.org/8``
+``composer config repositories.drupal composer https://packages.drupal.org/8``
 
 This allows Composer to find Commerce and the other Drupal modules.
 
 #. Download Commerce
 
-``sh  composer require "drupal/commerce 2.x-dev"``
+``composer require "drupal/commerce 2.x-dev"``
 
 This will also download the required libraries and modules (Address,
 Entity, State Machine, Inline Entity Form, Profile).
 
 #. Enable Commerce (instructions below use `Drupal Console`_)
 
-``sh  drupal module:install commerce_product commerce_checkout commerce_cart commerce_tax``
+``drupal module:install commerce_product commerce_checkout commerce_cart commerce_tax``
 
 .. _installation instructions for contributors: contributing/getting-started.html
 .. _Drupal 8’s requirements: https://www.drupal.org/requirements
