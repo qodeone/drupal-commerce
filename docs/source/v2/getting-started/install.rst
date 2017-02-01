@@ -25,9 +25,7 @@ New site
 The following command will download Drupal 8 + Commerce 2.x with all
 dependencies to the ``mystore`` folder:
 
-::
-
-    composer create-project drupalcommerce/project-base mystore --stability dev
+``composer create-project drupalcommerce/project-base mystore --stability dev``
 
 Install it just like a regular Drupal site. Commerce will be
 automatically enabled for you.
